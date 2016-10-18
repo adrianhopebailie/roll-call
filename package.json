@@ -1,28 +1,40 @@
 {
-  "name": "peer-call",
-  "version": "0.2.0",
-  "description": "Free and reliable audio calls for everyone.",
-  "main": "main.js",
+  "name": "roll-call",
+  "version": "0.2.1",
+  "description": "",
+  "main": "index.js",
   "scripts": {
-    "start": "signalhub listen -p 8080 & PODUSER=Mikeal DEBUG=* electron . & DEBUG=* PODUSER=Anna electron .",
-    "web": "browserify -t brfs renderer.js > bundle.js && beefy renderer.js"
+    "start": "beefy index.js:bundle.js --index index.html",
+    "test": "standard"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mikeal/roll-call.git"
   },
   "keywords": [],
   "author": "Mikeal Rogers <mikeal.rogers@gmail.com> (http://www.mikealrogers.com)",
   "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/mikeal/roll-call/issues"
+  },
+  "homepage": "https://github.com/mikeal/roll-call#readme",
+  "dependencies": {
+    "async-load": "^1.0.7",
+    "bel": "^4.4.3",
+    "clipboard": "^1.5.12",
+    "drag-drop": "^2.12.1",
+    "filestream": "^4.1.3",
+    "funky": "^1.4.0",
+    "getusermedia": "^2.0.0",
+    "killa-beez": "^2.4.0",
+    "media-recorder-stream": "^2.1.0",
+    "waudio": "^2.2.0",
+    "xhr": "^2.2.2"
+  },
   "devDependencies": {
     "beefy": "^2.1.8",
-    "electron-prebuilt": "^1.3.2"
-  },
-  "dependencies": {
-    "bl": "^1.1.2",
     "browserify": "^13.1.0",
-    "bs58": "^3.0.0",
-    "debug": "^2.2.0",
-    "idb-plus-blob-store": "^1.1.2",
-    "ipfs": "^0.14.3",
-    "lodash": "^4.14.1",
-    "once": "^1.3.3",
-    "simple-peer": "^6.0.5"
+    "standard": "^8.4.0",
+    "watchify": "^3.7.0"
   }
 }
